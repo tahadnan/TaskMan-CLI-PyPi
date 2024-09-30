@@ -1,15 +1,4 @@
 # TaskMan CLI
-
-<div align="center">
-
-[![TaskMan - Your Personal Task Manager](https://img.shields.io/badge/TaskMan-Your%20Personal%20Task%20Manager-blue?style=for-the-badge&logo=python&logoColor=white)](https://github.com/yourusername/TaskMan-CLI)
-
-[![PyPI version](https://badge.fury.io/py/taskman-cli.svg)](https://badge.fury.io/py/taskman-cli)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python Versions](https://img.shields.io/pypi/pyversions/taskman-cli.svg)](https://pypi.org/project/taskman-cli/)
-
-</div>
-
 ## 📝 Description
 
 TaskMan CLI is a powerful and user-friendly task management application built with Python. It offers a seamless command-line interface for efficiently managing your daily tasks, helping you boost productivity and stay organized.  
