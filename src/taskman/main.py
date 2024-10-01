@@ -1,5 +1,6 @@
 from ttask_manager.ttask_manager import TaskManager
-import os       
+import os
+import platformdirs
 from prompt_toolkit import prompt, HTML
 from prompt_toolkit import print_formatted_text as print
 from prompt_toolkit.styles import Style
@@ -13,6 +14,16 @@ from prompt_toolkit.auto_suggest import AutoSuggestFromHistory
 from prompt_toolkit.lexers import Lexer
 from prompt_toolkit.document import Document
 def main():
+    def get_necessary_files():
+        app_data_root = platformdirs.user_data_dir(appname="TaskMan-CLI", appauthor='TYA')
+        if not os.path.exists(app_data_root):
+            os.makedirs(app_data_root)
+        report_dir = os.path.join(app_data_root, 'Reports')
+        if not os.path.exists(report_dir):
+            os.makedirs(report_dir)
+        json_data_file = os.path.join(app_data_root, 'data.json')
+        history_file = FileHistory(os.path.join(app_data_root, '.hist'))
+        return report_dir, json_data_file, history_file
     def print_welcome_message():
         print(HTML("""<ansiyellow>
         ╔═══════════════════════════════════════════════════════════════════════════╗
@@ -70,13 +81,13 @@ def main():
     @binding.add('c-l')
     def _(event):
         clear_screen()
+    report_dir, json_data_file, history_file = get_necessary_files()     
     def save():
         save = confirm(HTML("<ansicyan>Wanna save the current state: </ansicyan>"),suffix="[y/N]" )
         if save:
             print(to_do_list.save_current_state(json_data_file))
         else:
-            print('Data not saved.')    
-                
+            print('Data not saved.')        
     print_welcome_message()
     commands = ['add','remove','mark-as-done','mad','list-both','lb','list-todo','ltd','list done','ld','clear-todo','cltd','clear-done','cld','reset','report','save','help','clear','exit']
     completer = WordCompleter(commands  , ignore_case=True)
@@ -86,10 +97,7 @@ def main():
         'message'  : '#008080'
     })
     to_do_list = TaskManager()
-    pyfile_path = os.path.dirname(os.path.realpath(__file__))
-    json_data_file = os.path.join(pyfile_path, 'data.json')
     print(to_do_list.load_recent_state(json_data_file))
-    history_file=(FileHistory('.hist'))
     while True:
         try:
             command = prompt(HTML("<b fg='#FFA500'><i>TaskMan > </i></b>"), completer=completer, history=history_file, auto_suggest=AutoSuggestFromHistory()).strip()            
@@ -140,9 +148,9 @@ def main():
             elif command.lower().startswith('report'):
                 report_name = command[len('report'):].strip()
                 if report_name and '\n' not in report_name:
-                    print(to_do_list.report(pyfile_path,f"{report_name}.txt"))
+                    print(to_do_list.report(report_dir,f"{report_name}.txt"))
                 else:
-                    print(to_do_list.report(pyfile_path))
+                    print(to_do_list.report(report_dir))
 
             elif command.lower().startswith('reset'):
                 print(to_do_list.reset())
