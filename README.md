@@ -94,7 +94,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you have any questions, feel free to reach out:
 
-- Your Name - tahacodes.101@gmail.com
+- Gmail - taha.y.adnan@gmail.com
 - Project Link: [TaskMan-CLI-PyPi](https://github.com/tahadnan/TaskMan-CLI-PyPi.git)
 
 ---
