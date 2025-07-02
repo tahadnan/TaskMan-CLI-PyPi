@@ -7,9 +7,13 @@
 
 </div>
 
+# Project Status
+
+Dear users and visitors, this project development is **COMPLETED** and no further development, from the creator's part, is expected in the foreseen future, but feel free to fork the project on [Github](https://github.com/tahadnan/TaskMan-CLI-PyPi) and build upon it, or improve it in any way. The latest stable release by the creator is [v1.0.0](https://pypi.org/project/taskman-cli/), thanks for your support, keep learning and contributing !  
+
 ## 📝 Description
 
-TaskMan CLI is a powerful and user-friendly task management application built with Python using the [ttask-manager](https://pypi.org/project/ttask-manager/) package. It offers a seamless command-line interface for efficiently managing your daily tasks, helping you boost productivity and stay organized.  
+TaskMan CLI is a powerful and user-friendly task management application built with Python. It offers a seamless command-line interface for efficiently managing your daily tasks, helping you boost productivity and stay organized.  
 
 **Important Note: As of 01/19/2025, [TaskMan CLI](https://github.com/tahadnan/TaskMan-CLI.git) repo was archived and now this is the main TaskMan CLI repo, the '-PyPi' will remain due to the existence of [TaskMan CLI](https://github.com/tahadnan/TaskMan-CLI.git).**
 
@@ -101,19 +105,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🙏 Acknowledgments
 
 - Inspired by the ZTM Python course by Andrei Neagoie
-- Built with love using Python and prompt_toolkit
-
-## 📞 Contact
-
-If you have any questions, feel free to reach out:
-
-- Gmail - taha.y.adnan@gmail.com
-- Project Link: [TaskMan-CLI-PyPi](https://github.com/tahadnan/TaskMan-CLI-PyPi.git)
-
----
-
-<div align="center">
-
-Made with ❤️ by [Taha Yasser Adnan](https://github.com/tahadnan)
-
-</div>
+- Built for learning purposes using Python, [ttask_manager](https://github.com/tahadnan/ttask-manager)[prompt_toolkit](https://github.com/prompt-toolkit/python-prompt-toolkit)

@@ -1,5 +1,5 @@
 import os
-from helper_functions import get_necessary_files,print_welcome_message, print_help_message
+from taskman_cli.helper_functions import get_necessary_files,print_welcome_message, print_help_message
 from ttask_manager import TaskManager
 from prompt_toolkit import prompt, HTML
 from prompt_toolkit import print_formatted_text as print
@@ -11,12 +11,10 @@ from prompt_toolkit.auto_suggest import AutoSuggestFromHistory
 
 def main():
     def clear_screen():
-        # For Windows
         if os.name == 'nt':
-            _ = os.system('cls')
-        # For Mac and Linux                 
+            os.system('cls')             
         else:
-            _ = os.system('clear')
+            os.system('clear')
     binding = KeyBindings()
     @binding.add('c-l')
     def _(event):
